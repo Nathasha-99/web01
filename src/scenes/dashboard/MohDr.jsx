@@ -8,21 +8,21 @@ import InputBase from "@mui/material/InputBase";
 import { Search } from "@mui/icons-material";
 import HappyFamily from "../../Assets/HappyFamily.json";
 import clinic from '../../Assets/clinic.json';
-import marriedCouple from '../../Assets/marriedCouple.json';
-import notification from '../../Assets/notification.json';
+import referal from '../../Assets/referal.json';
+import baby from '../../Assets/baby.json';
 import medicare from '../../Assets/medicare.json';
 import reports from '../../Assets/reports.json';
 import pregnant from '../../Assets/pregnant.json';
 import Lottie from 'lottie-react';
 
-const Midwife = () => {
+const MohDr = () => {
     
   
     return (
         <Box ml="20px"  >
             {/* HEADER */}
             <Box display="flex" justifyContent="space-between" alignItems="center">
-                <Header title="Hello - midwife" subtitle="Welcome to your dashboard" />
+                <Header title="Hello - MOH Dr" subtitle="Welcome to your dashboard" />
 
                 {/* SEARCH BOX */}
             <Box display="flex" bgcolor={"#e4e5e2"} borderRadius={"3px"} marginRight={"20px"}>
@@ -39,35 +39,35 @@ const Midwife = () => {
                     <Lottie animationData={medicare} />
                 </div>
 
-                
-
                 <div className="cards">
                     <div className="card-inner">
-                        <h8>MARRIED COUPLE REGISTRATION</h8>
-                        <Lottie style={{height:110}} animationData={marriedCouple}/>
+                        <h8>ELIGIBLE FAMILIES</h8>
+                        <Lottie style={{height:110}} animationData={HappyFamily}/>
                     </div>
                 </div>
                 
-                <div className="cards">
-                    <div className="card-inner">
-                        <h8>PREGNANCY REGISTRATION</h8>
-                        <Lottie style={{height:100}} animationData={pregnant}/>
-                    </div>
-                </div>
 
                 <div className="cards">
                     <div className="card-inner">
-                        <h8>NOTIFICATION HANDLING</h8>
-                        <Lottie style={{height:90}} animationData={notification}/>
+                        <h8>REGISTERED PREGNANT MOTHERS</h8>
+                        <Lottie style={{height:120}} animationData={pregnant}/>
+                    </div>
+                </div>
+                
+                <div className="cards">
+                    <div className="card-inner">
+                        <h8>MY BABIES</h8>
+                        <Lottie style={{height:90}} animationData={baby}/>
+                    </div>
+                </div>
+                <div className="cards">
+                    <div className="card-inner">
+                        <h8>REFERALS</h8>
+                        <Lottie style={{height:100}} animationData={referal}/>
                     </div>
                 </div>
 
-                <div className="cards">
-                    <div className="card-inner">
-                        <h8>SUMMARY REPORTS</h8>
-                        <Lottie style={{height:100}} animationData={reports}/>
-                    </div>
-            </div>
+                
             </div>
 
             <div className="second">
@@ -84,18 +84,13 @@ const Midwife = () => {
                     <div><Upcomings/></div>
                   
                 </div>
+                
                 <div className="cards">
                     <div className="card-inner">
-                        <h8>ELIGIBLE FAMILIES</h8>
-                        <Lottie style={{height:110}} animationData={HappyFamily}/>
+                        <h8>SUMMARY REPORTS</h8>
+                        <Lottie style={{height:100}} animationData={reports}/>
                     </div>
-                </div>
-                <div className="cards">
-                    <div className="card-inner">
-                        <h8>REGISTERED PREGNANT MOTHERS</h8>
-                        <Lottie style={{height:120}} animationData={pregnant}/>
-                    </div>
-                </div>
+            </div>
 
             </div>
 
@@ -103,4 +98,4 @@ const Midwife = () => {
     );
 
 };
-export default Midwife;
+export default MohDr;

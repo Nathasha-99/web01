@@ -7,6 +7,7 @@ import Footer from "./scenes/global/footer"
 import Admin from "./scenes/dashboard/Admin";
 import Dashboard from "./scenes/dashboard";
 import Midwife from "./scenes/dashboard/Midwife";
+import MohDr from "./scenes/dashboard/MohDr";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <main className='Content'>
         <Topbar />
         <Routes>
-          <Route path="/" element={<Midwife />} />
+          <Route path="/" element={<MohDr/>} />
         </Routes>
         {/* <Footer/> */}
         

@@ -46,7 +46,7 @@ const Dashboard = () => {
                 <div className="cards">
                     <div className="card-inner">
                         <h8>MY BABIES</h8>
-                        <Lottie style={{height:80}} animationData={baby}/>
+                        <Lottie style={{height:90}} animationData={baby}/>
                     </div>
                 </div>
                 <div className="cards">
@@ -78,6 +78,7 @@ const Dashboard = () => {
                   <div><Upcomings/></div>
                 </div>
                 <div>
+                <h8 >Grab Your Favourite Articles From Here!</h8>
                     <Lottie animationData={clinic} />
                 </div>
 

@@ -56,7 +56,7 @@ const MohDr = () => {
                 
                 <div className="cards">
                     <div className="card-inner">
-                        <h8>MY BABIES</h8>
+                        <h8>BABIES</h8>
                         <Lottie style={{height:90}} animationData={baby}/>
                     </div>
                 </div>

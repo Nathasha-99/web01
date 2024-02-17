@@ -19,6 +19,7 @@ const Dashboard = () => {
   
     return (
         <Box ml="20px"  >
+            
             {/* HEADER */}
             <Box display="flex" justifyContent="space-between" alignItems="center">
                 <Header title="Hello" subtitle="Welcome to your dashboard" />
@@ -35,7 +36,7 @@ const Dashboard = () => {
             {/* Main boxes */}
             <div className="main-cards">
                 <div>
-                    <Lottie animationData={HappyFamily} />
+                    <Lottie animatisonData={HappyFamily} />
                 </div>
                 <div className="cards">
                     <div className="card-inner">

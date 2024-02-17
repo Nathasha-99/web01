@@ -5,6 +5,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import Upcomings from "../../components/Upcomings";
 import InputBase from "@mui/material/InputBase";
+import Grid from "@mui/material/Grid";
 import { Search } from "@mui/icons-material";
 import HappyFamily from "../../Assets/HappyFamily.json";
 import clinic from '../../Assets/clinic.json';
@@ -33,20 +34,19 @@ const Midwife = () => {
             </Box>
             </Box>
             
+            
             {/* Main boxes */}
-            <div className="main-cards">
-                <div>
-                    <Lottie animationData={medicare} />
-                </div>
+            <div  className="main-cards">
+                <div >
+                    <div  >
+                        <Lottie animationData={medicare} />
+                    </div>
 
-                
-
-                <div className="cards">
-                    <div className="card-inner">
+                    <div >
                         <h8>MARRIED COUPLE REGISTRATION</h8>
                         <Lottie style={{height:110}} animationData={marriedCouple}/>
                     </div>
-                </div>
+                
                 
                 <div className="cards">
                     <div className="card-inner">
@@ -67,8 +67,8 @@ const Midwife = () => {
                         <h8>SUMMARY REPORTS</h8>
                         <Lottie style={{height:100}} animationData={reports}/>
                     </div>
-            </div>
-            </div>
+                 </div>
+            
 
             <div className="second">
             
@@ -99,6 +99,8 @@ const Midwife = () => {
 
             </div>
 
+        </div>
+        </div>
         </Box>
     );
 

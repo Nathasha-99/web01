@@ -1,12 +1,12 @@
 import React from 'react'
 
-const test = () => {
+const Test = () => {
   return (
     <div>
-      <h3>test 01</h3>
+      <h3>Test 01</h3>
     </div>
   )
 }
 ;
-export default test
+export default Test
 

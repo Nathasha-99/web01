@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 //import { FormControl, InputLabel, Input, InputAdornment } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import { Radio, FormControlLabel, RadioGroup, FormControl,FormLabel, Typography } from "@mui/material";
+import { Radio, FormControlLabel, RadioGroup, FormControl,FormLabel, Typography, InputLabel,Select,MenuItem, Button } from "@mui/material";
 import Header from "../../components/header";
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -31,16 +31,22 @@ function RadioInputGroup({ label, options }) {
 const FieldClinicInformationForm = () => {
   const radioGroupOptions = [
     { value: 'yes', label: 'Yes' },
-    { value: 'no', label: 'No' },
-    
+    { value: 'no', label: 'No' }, 
   ];
+
+  const PresentingPart = [
+    { value: 'head', label: 'Head'},
+    { value: 'breech', label: 'Breech'},
+    { value: 'other', label: 'Other'},
+  ];
+
   return (
     <div>
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="Field Clinic Information" />
       </Box>
-      <form>
+      <form >
         <Box
           component="form"
           sx={{
@@ -54,8 +60,9 @@ const FieldClinicInformationForm = () => {
           //height="80vh"
           flexDirection="column"
         >
-          <Grid container spacing={6}   sx={{ width: "90%" }}>
-            <Grid item xs={6} sx={{ padding: "1em 1em 0em 1em !important" }}>
+          <Grid container spacing={2}   sx={{ width: "90%" }}>
+            
+            <Grid item xs={12} sx={{ padding: "1em 1em 0em 1em !important" }}>
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DemoContainer components={['DateField']}>
                   <DateField label="Visit Date" required sx={{ width: "100%" }}/>
@@ -73,55 +80,72 @@ const FieldClinicInformationForm = () => {
               />
             </Grid>
 
-
-
             <Grid item xs={6} sx={{ padding: "1em 1em 0em 1em !important" }}>
                 <RadioInputGroup label="Anemia" options={radioGroupOptions} />
             </Grid>
 
             <Grid item xs={6} sx={{ padding: "1em 1em 0em 1em !important" }}>
-              <Typography>Oedema</Typography>
-              <RadioInputGroup item xs={3} label="Ankle" options={radioGroupOptions} />
-              {/* <RadioInputGroup item xs={3} label="Facial" options={radioGroupOptions} /> */}
-            </Grid>
-
-            <Grid item xs={6} sx={{ padding: "1em 1em 0em 1em !important" }}>
-                <TextField
-                    required
-                    placeholder="Fundal Height"
-                    name="FundalHeight"
-                    label="Fundal Height"
-                    sx={{ width: "100%" }}
-                  />
-            </Grid>
-
-            <Grid item xs={6} sx={{ padding: "1em 1em 0em 1em !important" }}>
               <TextField
-                required
-                placeholder="Presenting Part"
-                name="PresentingPart"
-                label="Presenting Part"
-                sx={{ width: "100%" }}
+                  required
+                  placeholder="Fundal Height"
+                  name="FundalHeight"
+                  label="Fundal Height"
+                  sx={{ width: "100%" }}
               />
             </Grid>
+          
 
-            <Grid item xs={6} sx={{ padding: "1em 1em 0em 1em !important" }}>
-                <RadioInputGroup label="FM" options={radioGroupOptions} />
+            <Grid item xs={6} mt={1} sx={{ padding: "1em 1em 0em 1em !important" }}>
+            <FormControl  fullWidth>
+                <InputLabel>Presenting Part</InputLabel>
+                <Select
+                  label="Presenting Part"
+                  name="PresentingPart"
+                >
+                  {PresentingPart.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
             </Grid>
 
             <Grid item xs={6} sx={{ padding: "1em 1em 0em 1em !important" }}>
-                <RadioInputGroup label="FHS" options={radioGroupOptions} />
+                <RadioInputGroup required label="FM" options={radioGroupOptions} />
             </Grid>
-            
 
-            <Grid container spacing={2} item xs={6} sx={{ padding: "1em 1em 0em 1em !important" }}>
+            <Grid item xs={6} sx={{ padding: "1em 1em 0em 1em !important" }}>
+                <RadioInputGroup required label="FHS" options={radioGroupOptions} />
+            </Grid>
+           
+            <Grid  item xs={6} sx={{ padding: "1em 1em 0em 1em !important" }}>
+              <RadioInputGroup required label="Oedema" options={radioGroupOptions} />
+            </Grid>
+
+            <Grid container spacing={2} item xs={6} mt={1} sx={{ padding: "1em 1em 0em 1em !important" }}>
               <Typography>Urine</Typography>
-              
-              <RadioInputGroup item xs={6} label="Sugar" options={radioGroupOptions} />
-              <RadioInputGroup item xs={6} label="Albumin" options={radioGroupOptions} />
-              
-              
+              <Grid item xs={3} sx={{ padding: "1em 1em 0em 1em !important" }}>
+                <TextField
+                  required
+                  placeholder="Sugar"
+                  name="Sugar"
+                  label="Sugar"
+                  sx={{ width: "100%" }}
+                />
+              </Grid>
+              <Grid item xs={3} sx={{ padding: "1em 1em 0em 1em !important" }}>
+                <TextField
+                  required
+                  placeholder="Albumin"
+                  name="Albumin"
+                  label="Albumin"
+                  sx={{ width: "100%" }}
+                />
+              </Grid>
             </Grid>
+
+            
 
             {/* <Grid item xs={6} sx={{ padding: "1em 1em 0em 1em !important" }}>
                 <RadioInputGroup label="Albumin" options={radioGroupOptions} />
@@ -194,15 +218,22 @@ const FieldClinicInformationForm = () => {
                 <Grid item xs={6} sx={{ padding: "1em 1em 0em 1em !important" }}>
                   <RadioInputGroup label="Awareness about family planning methods" options={radioGroupOptions} />
                 </Grid>
-                <Grid item xs={6} sx={{ padding: "1em 1em 0em 1em !important" }}>
-                  <RadioInputGroup label="Dates to visit the clinic" options={radioGroupOptions} />
-                </Grid> 
+                <Grid container spacing={2}   sx={{ width: "90%" }}>
+                  <Grid item xs={12} sx={{ padding: "1em 1em 0em 1em !important" }}>
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                      <DemoContainer components={['DateField']}>
+                        <DateField label="Date to visit Clinic" required sx={{ width: "100%" }}/>
+                      </DemoContainer>
+                    </LocalizationProvider>
+                  </Grid> 
+                </Grid>
 
+                <Grid item xs={12}  sx={{ padding: "1em 1em 0em 1em !important" }}>
+                <Button variant="contained" color="primary" sx={{mb:'20px'}}>
+                  Submit
+                </Button>
+              </Grid>
 
-
-            
-
-            
           </Grid>
         </Box>
       </form>
